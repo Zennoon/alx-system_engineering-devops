@@ -1,0 +1,1 @@
+This repository was created on September 29, 2023 to hold my submissions for the "0x00 Shell Basics" project in ALX SE foundations course.
