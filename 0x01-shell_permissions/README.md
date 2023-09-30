@@ -1,0 +1,1 @@
+This directory was created to hold my answers / submissions for the project 0x01 Shell permissions in ALX SE foundations program
