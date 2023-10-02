@@ -39,3 +39,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 19-AZ: The script uses the tr command with the set to be replaced and the set to replace it with given
 
+20-hiago: The script uses the tr command with the -d option to delete the given characters, in this case c and C from the input
+
