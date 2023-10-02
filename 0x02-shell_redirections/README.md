@@ -37,3 +37,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 18-letteronly: The script uses the grep command with a regular expression to match all lines beginning with a letter
 
+19-AZ: The script uses the tr command with the set to be replaced and the set to replace it with given
+
