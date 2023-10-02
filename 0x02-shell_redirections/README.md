@@ -26,3 +26,6 @@ This directory was created to hold my answers / submissions for the project 0x02
 12-newest_files: The script uses ls with the -t option to list sorted by modification time (newest first) then uses head to list the 10 newest files
 
 13-unique: The script uses uniq with the -u option to only display unique lines, and then uses sort to sort the lines
+
+14-findthatword: The script uses grep to find the root pattern in the file
+
