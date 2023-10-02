@@ -13,3 +13,6 @@ This directory was created to hold my answers / submissions for the project 0x02
 5-firstlines: The script uses head with out number of lines specified (default is 10) to display the first 10 lines of the given file
 
 6-third_line: The script first uses head to display first 3 lines of the file, then it passes it to tail which displays the last line (3rd line) of those 3 lines
+
+
+8-cwd_state: The script uses the ls command with the > redirection operator to either create a new file, or overwrite an existing one
