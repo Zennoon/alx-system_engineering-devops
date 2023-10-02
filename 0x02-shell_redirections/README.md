@@ -29,3 +29,4 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 14-findthatword: The script uses grep to find the root pattern in the file
 
+15-countthatword: The script uses grep to display the lines containing the bin pattern, then it uses wc with the -l option to count the number of lines
