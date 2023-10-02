@@ -9,3 +9,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 3-twofiles: The script uses cat and lists two files separated by white space to concatenate their content and display
 
 4-lastlines: The script uses tail with out number of lines specified (default is 10) to display the last 10 lines of the given file
+
+5-firstlines: The script uses head with out number of lines specified (default is 10) to display the first 10 lines of the given file
