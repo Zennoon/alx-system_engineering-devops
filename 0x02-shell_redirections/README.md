@@ -22,3 +22,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 10-no_more_js: The script uses find to locate js files, and then utilizes the xargs to command to delete them
 
 11-directories: The script first uses the find command to locate directories, and then counts them using the wc command
+
+12-newest_files: The script uses ls with the -t option to list sorted by modification time (newest first) then uses head to list the 10 newest files
