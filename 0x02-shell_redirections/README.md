@@ -43,3 +43,4 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 21-reverse: The script uses the rev command to reverse the input string
 
+22-users_and_homes: The script uses cat to read the file, then uses cut to remove the unneeded sections, and finally uses sort to sort the output
