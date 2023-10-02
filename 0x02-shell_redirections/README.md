@@ -16,3 +16,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 
 8-cwd_state: The script uses the ls command with the > redirection operator to either create a new file, or overwrite an existing one
+
+9-duplicate_last_line: The script uses tail to grab the last line of the file, then it uses the >> redirection operator to duplicate it on the same file
