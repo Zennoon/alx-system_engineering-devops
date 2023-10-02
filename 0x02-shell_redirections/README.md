@@ -31,4 +31,6 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 15-countthatword: The script uses grep to display the lines containing the bin pattern, then it uses wc with the -l option to count the number of lines
 
-15-whatsnext: The script uses grep to find the lines containing the root pattern, the -A 3 option makes it display 3 lines found after each match
+16-whatsnext: The script uses grep to find the lines containing the root pattern, the -A 3 option makes it display 3 lines found after each match
+
+17-hidethisword: The script uses grep with the -v option to invert the search and display lines not containing the pattern bin
