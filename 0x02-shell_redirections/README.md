@@ -41,3 +41,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 
 20-hiago: The script uses the tr command with the -d option to delete the given characters, in this case c and C from the input
 
+21-reverse: The script uses the rev command to reverse the input string
+
