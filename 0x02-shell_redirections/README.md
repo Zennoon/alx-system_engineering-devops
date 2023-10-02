@@ -20,3 +20,5 @@ This directory was created to hold my answers / submissions for the project 0x02
 9-duplicate_last_line: The script uses tail to grab the last line of the file, then it uses the >> redirection operator to duplicate it on the same file
 
 10-no_more_js: The script uses find to locate js files, and then utilizes the xargs to command to delete them
+
+11-directories: The script first uses the find command to locate directories, and then counts them using the wc command
