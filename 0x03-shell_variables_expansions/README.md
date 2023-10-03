@@ -10,3 +10,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 4-global_variables: The script uses the printenv command to print the global variables
 
+5-local_variables: The script uses the set command, which with out options, prints local, and global variables along with functions
+
