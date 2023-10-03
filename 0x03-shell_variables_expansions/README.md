@@ -8,3 +8,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 3-paths: The script uses the tr command to replace every ':' in PATH with a new line, then it uses the wc -l command to count how many lines there are
 
+4-global_variables: The script uses the printenv command to print the global variables
+
