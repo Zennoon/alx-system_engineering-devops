@@ -12,3 +12,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 5-local_variables: The script uses the set command, which with out options, prints local, and global variables along with functions
 
+6-create_local_variable: The script uses the assignment operator '=' with out exporting to create a local variable
+
