@@ -30,3 +30,6 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 
 100-decimal_to_hexadecimal: The script uses the printf command / function to print the converted number to the standard output
+
+101-rot13: The script uses the tr command to translate the characters 13 times forward
+
