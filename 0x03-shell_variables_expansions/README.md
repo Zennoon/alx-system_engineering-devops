@@ -14,3 +14,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 6-create_local_variable: The script uses the assignment operator '=' with out exporting to create a local variable
 
+7-create_global_variable: The script uses the assignment operator '=' and the export command to create a global variable
+
