@@ -29,3 +29,4 @@ This directory was created to hold my answers / submissions for the project '0x0
 13-print_float: The script uses the printf command to round the number to 2 digits
 
 
+100-decimal_to_hexadecimal: The script uses the printf command / function to print the converted number to the standard output
