@@ -24,3 +24,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 11-binary_to_decimal: The script uses arithmetic expansion with the form base#number to convert the number to decimal
 
+12-combinations: The script first uses brace expansion to produce the combinations, then the tr command inserts a new line after each combination, finally it uses grep -v to display everything except 'oo'
+
