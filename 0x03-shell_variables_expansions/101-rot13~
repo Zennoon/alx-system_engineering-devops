@@ -1,2 +1,0 @@
-#!/bin/bash
-echo $(tr "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "NOPQRSTUVWXYZABCDEFGHIJKLM" | tr "abcdefghijklmnopqrstuvwxyz" "nopqrstuvwxyzabcdefghijklm")
