@@ -16,3 +16,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 7-create_global_variable: The script uses the assignment operator '=' and the export command to create a global variable
 
+8-true_knowledge: The script uses arithmetic expansion to calculate the sum. The TRUEKNOWLEDGE variable doesn't need the parameter expansion symbol ($) within an expression
+
