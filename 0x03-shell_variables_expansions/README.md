@@ -18,3 +18,4 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 8-true_knowledge: The script uses arithmetic expansion to calculate the sum. The TRUEKNOWLEDGE variable doesn't need the parameter expansion symbol ($) within an expression
 
+9-divide_and_rule: The script uses arithmetic expansion to perform integer division. The POWER and DIVIDE variables don't need the parameter expansion symbol ($) within an expression. 
