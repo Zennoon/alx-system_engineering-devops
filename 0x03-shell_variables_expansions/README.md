@@ -4,3 +4,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 
 1-hello_you: The script uses the echo command with the USER reserved variable to print the name of the current user
 
+2-path: The script uses the existing reserved variable PATH and appends :/action to it using double quoting which does not suppress parameter expansion
+
