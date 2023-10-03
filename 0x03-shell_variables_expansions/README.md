@@ -34,3 +34,5 @@ This directory was created to hold my answers / submissions for the project '0x0
 101-rot13: The script uses the tr command to translate the characters 13 times forward
 
 102-odd: The script uses the cat -n command to first display the line numbers, then grep displays only the odd numbered lines, finally, cut is used to remove any whitespace and the line numbers
+
+103-water_and_stir: The script uses the printf command and a whole lot of parameter expansion
