@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times using a while loop.
+
+# While loop feels like the more natural way of doing this than a for loop,
+#+ but that might be because I am not that used to the for loop of bash yet.
+
+i=0
+
+while [ "$i" -lt 10 ]
+do
+	echo "Best School"
+	(( i++ ))
+done
