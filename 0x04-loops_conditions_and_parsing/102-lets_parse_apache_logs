@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This scripts parses an apache log file to display only the IP and HTTPS status
+#+ code for every user in the log
+
+awk '{print $1,$9}' apache-access.log
