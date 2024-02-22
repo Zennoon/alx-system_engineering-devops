@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times using a for loop.
+
+# There are multiple ways to do this, one of which is the very C like for loop
+#+ structure (for ((i = 0; i < 10; i++))), but I have chosen another mechanism,
+#+ which I think fits bash and the concept of the for loop iterating over items
+#+ in a list more.
+
+# The increment of the i variable is just to avoid i being unused and shellcheck
+#+ complaining.
+
+for i in {0..9};
+do
+    echo "Best School"
+    (( i = i + 1 ))
+done
