@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays the names of files in pwd, but only the part after
+#+ the first dash in their names.
+
+for filename in $( find . -mindepth 1 | cat )
+do
+	echo "$filename" | cut -f2 -d "-"
+done
