@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This scripts builds on the previous script by grouping visitors by IP and code
+
+awk '{print $1,$9}' apache-access.log | sort -n | uniq -dc | sort -rn
