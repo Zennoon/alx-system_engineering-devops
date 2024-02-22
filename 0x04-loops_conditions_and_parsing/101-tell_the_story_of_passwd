@@ -6,5 +6,5 @@ IFS=":"
 
 while read -r NAME PASSWORD USRID GID UIDINFO HOME_D SHELL;
 do
-	echo "The user $NAME is part of the $GID gang, lives in $HOME_D and rides $SHELL. $USRID's place is protected by the password $PASSWORD, more info about the user here: $UIDINFO"
+	echo "The user $NAME is part of the $GID gang, lives in $HOME_D and rides $SHELL. $USRID's place is protected by the passcode $PASSWORD, more info about the user here: $UIDINFO"
 done</etc/passwd
