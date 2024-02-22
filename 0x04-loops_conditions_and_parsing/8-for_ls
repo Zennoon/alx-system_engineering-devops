@@ -4,5 +4,5 @@
 
 for filename in $( find . -mindepth 1 | cat )
 do
-	echo "$filename" | cut -f2 -d "-"
+	echo "$filename" | cut -f2 -d "/" | cut -f2 -d "-"
 done
