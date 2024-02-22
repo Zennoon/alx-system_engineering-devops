@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times using an until loop.
+
+# Another thing that makes me choose while and until over for in this scenario
+#+ is that the iterator variable (i) is actually used.
+
+i=10
+
+until [ "$i" -eq 0 ]
+do
+	echo "Best School"
+	(( i-- ))
+done
