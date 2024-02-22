@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script uses case clauses to display different messages for some of the
-special values in Chinese, Japanese, and Italian cultures.
+#+ special values in Chinese, Japanese, and Italian cultures.
 
 i=1
 
