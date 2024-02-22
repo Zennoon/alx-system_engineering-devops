@@ -2,9 +2,10 @@
 # This script reads /etc/passwd and displays the name, id, and home directory
 #+ path of each user.
 
-IFS=":"
-
-while read USERNAME UNWANTED1 ID UNWANTED2 UNWANTED3 HOME_D UNWANTED4;
+while read -r LINE;
 do
+	USERNAME=$(echo "$LINE" | cut -f1 -d ":")
+	ID=$(echo "$LINE" | cut -f3 -d ":")
+	HOME_D=$(echo "$LINE" | cut -f6 -d ":")
 	echo "$USERNAME:$ID:$HOME_D"
 done</etc/passwd
