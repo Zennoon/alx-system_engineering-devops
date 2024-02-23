@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script indefinitely appends a message to /tmp/my_process every 2 seconds.
+
+while true
+do
+	echo "I am alive!" >> /tmp/my_process
+	sleep 2
+	(( i += 1 ))
+done

@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# This script manages the manage_my_process script as a daemon
+
+if [ "$#" -lt 1 ] || [ "$#" -gt 1 ]
+then
+	echo "Usage: manage_my_process {start|stop|restart}"
+	exit
+fi
+
+start()
+{
+	./manage_my_process &
+        pgrep -f "./manage_my_process" > /var/run/my_process.pid
+}
+
+stop()
+{
+	pkill -f "./manage_my_process"
+        rm /var/run/my_process.pid
+}
+
+restart()
+{
+	stop
+	start
+}
+
+case "$1" in
+"start")
+	start
+	echo "manage_my_process started"
+	;;
+"stop")
+	stop
+	echo "maange_my_process stopped"
+	;;
+"restart")
+	restart
+	echo "manage_my_process restarted"
+	;;
+*)
+	echo "Usage: manage_my_process {start|stop|restart}"
+	;;
+esac
