@@ -2,7 +2,7 @@
 # This script displays a message indefinitely and displays another message when
 #+ it receives a SIGTERM signal.
 
-trap "echo 'I am invincible'" TERM
+trap "echo 'I am invincible!!!'" TERM
 
 while true;
 do
