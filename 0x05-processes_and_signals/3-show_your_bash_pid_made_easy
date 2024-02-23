@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This script displays the PID and the name of processes containing the word
-#+ bash using pgrep.
+#+ bash in their name using pgrep.
 
 pgrep --list-name bash
