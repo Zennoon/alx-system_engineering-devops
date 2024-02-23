@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script catches multiple signals and displays a message for them.
+
+echo $$ > /var/run/myscript.pid
+
+trap "echo 'Y U no love me?!'" INT
+trap "echo 'I hate the kill command' ; rm /var/run/myscript.pid ; exit" TERM
+trap "rm /var/run/myscript.pid ; exit" QUIT
+
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
