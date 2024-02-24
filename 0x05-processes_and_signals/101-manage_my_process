@@ -32,7 +32,7 @@ case "$1" in
 	;;
 "stop")
 	stop
-	echo "maange_my_process stopped"
+	echo "manage_my_process stopped"
 	;;
 "restart")
 	restart
