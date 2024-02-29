@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script adds and changes hostname resolutions in the system by modifying
+#+ the /etc/hosts file
+
+cp /etc/hosts /etc/hosts.new
+output=$(sed -E "s/[0-9\.]+\s*localhost/127.0.0.2\tlocalhost/" /etc/hosts.new)
+echo "$output" > /etc/hosts.new
+FACEBOOK_COUNT=$(grep -c "facebook.com" /etc/hosts.new)
+if [ "$FACEBOOK_COUNT" -ne 0 ]
+then
+	output=$(sed -E "s/[0-9\.]+\s*facebook.com/8.8.8.8\tfacebook.com/" /etc/hosts.new)
+	echo "$output" > /etc/hosts.new
+else
+	echo -e "8.8.8.8\tfacebook.com" >> /etc/hosts.new
+fi
+
+cat /etc/hosts.new > /etc/hosts
+rm /etc/hosts.new
