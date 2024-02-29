@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays the currently listening ports of the system along with
+#+ the name and PID of each socket (IP + port)
+netstat -lp
