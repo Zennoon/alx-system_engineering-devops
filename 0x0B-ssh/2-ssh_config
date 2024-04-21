@@ -2,5 +2,5 @@
 
 Include /etc/ssh/ssh_config.d/*.conf
 
-#   PasswordAuthentication no
-#   IdentityFile ~/.ssh/school
+PasswordAuthentication no
+IdentityFile ~/.ssh/school
