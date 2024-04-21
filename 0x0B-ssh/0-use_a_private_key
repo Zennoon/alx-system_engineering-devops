@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script connects to a server using a non-default private key in
+# ~/.ssh/school with the user ubuntu
+
+ssh -i ~/.ssh/school ubuntu@34.224.2.49
