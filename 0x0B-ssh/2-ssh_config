@@ -1,3 +1,5 @@
+# This is the ssh client user-defined configuration file for the school key
+
 Include /etc/ssh/ssh_config.d/*.conf
 
 #   PasswordAuthentication no
