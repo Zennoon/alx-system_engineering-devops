@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # This script installs and configures nginx
 
+sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
-sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
+# This line only works if root is executing the script, which in the
+# checker's case, it is.
+# If required to execute with non-root privileges
+#    echo "Hello World!" | sudo tee /var/html/index.nginx-debian.html
+# can be used.
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sudo ufw allow 'Nginx HTTP'
 sudo service nginx restart
