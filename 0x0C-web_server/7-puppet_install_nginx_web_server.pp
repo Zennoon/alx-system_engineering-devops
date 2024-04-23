@@ -17,6 +17,7 @@ file_line { 'redirect':
   match   => 'server_name _;',
   replace => true,
   path    => '/etc/nginx/sites-available/default',
+  require => Package['nginx'],
 }
 
 service { 'nginx':
