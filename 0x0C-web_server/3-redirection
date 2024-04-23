@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script configures nginx to redirect requests to /redirect_me
+
+new_line='rewrite \/redirect_me \/ permanent'
+sudo sed -i "s/server_name _;/server_name _;\n\t$new_line;/" /etc/nginx/sites-available/default
+sudo service nginx restart
