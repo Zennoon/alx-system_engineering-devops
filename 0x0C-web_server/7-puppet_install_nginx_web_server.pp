@@ -1,6 +1,8 @@
+# Puppet file to configure nginx on a server
+
 package { 'nginx':
-  name     => 'nginx',
-  provider => 'apt',
+  ensure => installed,
+  name   => 'nginx',
 }
 
 file { 'index.nginx-debian.html':
