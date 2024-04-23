@@ -2,6 +2,7 @@
 # Script to fix a server not displaying expected message
 
 sudo apt -y update
+sudo apt -y upgrade
 sudo apt -y install apache2
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 sudo service apache2 restart
