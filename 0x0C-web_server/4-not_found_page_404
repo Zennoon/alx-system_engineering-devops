@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script configures nginx to redirect requests to /redirect_me
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+# This line only works if root is executing the script, which in the
+# checker's case, it is.
+# If required to execute with non-root privileges
+#    echo "Hello World!" | sudo tee /var/html/index.nginx-debian.html
+# can be used.
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo ufw allow 'Nginx HTTP'
+redirect='\n\trewrite \/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;'
+err_404='\n\terror_page 404 \/custom_404;'
+location='\n\tlocation = \/custom_404 {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}'
+sudo sed -i "s/server_name _;/server_name _;$new_line$err_404$location/" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404
+sudo service nginx restart
