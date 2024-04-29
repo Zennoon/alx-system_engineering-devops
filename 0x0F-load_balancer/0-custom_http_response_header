@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Script to configure an nginx web server on an Ubuntu machine
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+sudo ufw allow 'Nginx HTTP'
+
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404
+
+redirect='\n\trewrite \/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;'
+
+err_404='\n\terror_page 404 \/custom_404;'
+
+location='\n\tlocation = \/custom_404 {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}'
+
+file_path=/etc/nginx/sites-available/default
+
+if ! grep -q "rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" $file_path
+then
+    sudo sed -i "s/server_name _;/server_name _;$redirect/" $file_path
+fi
+
+if ! grep -q "location = /custom_404" $file_path
+then
+    sudo sed -i "s/server_name _;/server_name _;$location/" $file_path
+fi
+
+if ! grep -q "error_page 404 /custom_404;" $file_path
+then
+    sudo sed -i "s/server_name _;/server_name _;$err_404/" $file_path
+fi
+
+custom_header="\n\t\tadd_header X-Served-By $(hostname);"
+
+if ! grep -q "add_header X-Served-By" $file_path
+then
+    sudo sed -i "s/location \/ {/location \/ {$custom_header/" $file_path
+fi
+
+sudo service nginx restart
