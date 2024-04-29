@@ -1,5 +1,10 @@
 # Puppet file to configure nginx servers to add custom headers to their response
 
+exec { 'update':
+  command => 'apt-get update -y; apt-get upgrade-y',
+  path    => '/usr/bin',
+}
+
 package { 'nginx':
   ensure => installed,
   name   => 'nginx',
@@ -18,6 +23,7 @@ file_line { 'add header' :
   line   => "\tadd_header X-Served-By ${hostname};",
   after  => 'server_name _;',
 }
--> service { 'nginx':
+
+service { 'nginx':
   ensure => running,
 }
