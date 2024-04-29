@@ -12,25 +12,12 @@ file { 'index.nginx-debian.html':
   require => Package['nginx'],
 }
 
-$newline = 'rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
-
-file_line { 'redirect':
-  line    => "server_name _;\n\t${newline}",
-  match   => 'server_name _;',
-  path    => '/etc/nginx/sites-available/default',
-  require => Package['nginx'],
+file_line { 'add header' :
+  ensure => present,
+  path   => '/etc/nginx/sites-available/default',
+  line   => "\tadd_header X-Served-By ${hostname};",
+  after  => 'server_name _;',
 }
-
-file_line { 'custom_header':
-  ensure  => present,
-  line    => "\t\tadd_header X-Served-By ${hostname}",
-  after   => '\n\tlocation / {',
-  path    => '/etc/nginx/sites-available/default',
-  require => Package['nginx'],
-}
-
-exec { 'restart_nginx':
-  command => 'sudo service nginx restart',
-  path    => '/usr/bin',
-  require => Package['nginx'],
+-> service { 'nginx':
+  ensure => running,
 }
