@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Script to install and configure a haproxy load balancer in an Ubuntu machine
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+
+if ! grep -q "ENABLED=" /etc/default/haproxy
+then
+    echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+else
+    sudo sed -iE "s/ENABLED=./ENABLED=1/" /etc/default/haproxy
+fi
+
+frontend="frontend www\n\tmode http\n\tbind :80\n\tdefault_backend web-servers\n"
+backend="backend web-servers\n\tbalance roundrobin\n\tserver web-01 34.224.2.49:80 check\n\tserver web-02 52.3.240.101:80 check\n"
+
+if ! grep -q "frontend www" /etc/haproxy/haproxy.cfg
+then
+    echo "frontend www" | sudo tee -a /etc/haproxy/haproxy.cfg
+    sudo sed -i "s/frontend www/$frontend/" /etc/haproxy/haproxy.cfg
+fi
+
+if ! grep -q "^backend web-servers" /etc/haproxy/haproxy.cfg
+then
+    echo "backend web-servers" | sudo tee -a /etc/haproxy/haproxy.cfg
+    sudo sed -iE "s/^backend web-servers/$backend/" /etc/haproxy/haproxy.cfg
+fi
+
+sudo service haproxy restart
