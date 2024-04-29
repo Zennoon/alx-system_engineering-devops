@@ -1,7 +1,7 @@
 # Puppet file to configure nginx servers to add custom headers to their response
 
 exec { 'update':
-  command => 'apt-get update -y; apt-get upgrade-y',
+  command => 'apt-get update -y; apt-get upgrade -y',
   path    => '/usr/bin',
 }
 
