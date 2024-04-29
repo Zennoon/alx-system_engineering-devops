@@ -12,11 +12,11 @@ file { 'index.nginx-debian.html':
   require => Package['nginx'],
 }
 
-$newline = "rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+$newline = 'rewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
 
 file_line { 'redirect':
   line    => "server_name _;\n\t${newline}",
-  match   => "server_name _;",
+  match   => 'server_name _;',
   path    => '/etc/nginx/sites-available/default',
   require => Package['nginx'],
 }
