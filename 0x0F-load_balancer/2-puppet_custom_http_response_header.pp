@@ -17,11 +17,9 @@ file { 'index.nginx-debian.html':
   require => Package['nginx'],
 }
 
-file_line { 'add header' :
-  ensure => present,
-  path   => '/etc/nginx/sites-available/default',
-  line   => "\tadd_header X-Served-By ${hostname};",
-  after  => 'server_name _;',
+exec { 'custom_header':
+  command => 'sudo sed -i "s/location \/ {/location \/ {\n\t\tadd_header X-Served-By $(hostname);/" /etc/nginx/sites-available/default',
+    path  => '/usr/bin',
 }
 
 service { 'nginx':
