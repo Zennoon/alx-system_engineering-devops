@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Script to install and configure nginx to listen on port 80 and stop
 # apache from using port 80
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install nginx
-sudo service apache2 stop
-sudo service nginx restart
+sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install nginx && sudo service nginx restart
