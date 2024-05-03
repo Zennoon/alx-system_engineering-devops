@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Accepts a domain and a subdomain and displays DNS information about it
+
+dig_domain ()
+{
+    sub=$1
+    line=$(dig "$1.$2" | grep -A 1 "ANSWER SECTION" | tail -n 1)
+    record=$(echo "$line" | awk '{print $4}')
+    ip=$(echo "$line" | awk '{print $5}')
+    echo "The subdomain $sub is a $record record and points to $ip"
+}
+
+list="www lb-01 web-01 web-02"
+
+if [ -z "$1" ]
+then
+    exit
+fi
+
+if [ -z "$2" ]
+then
+    for sub in $list
+    do
+	dig_domain "$sub" "$1"
+    done
+
+else
+    dig_domain "$2" "$1"
+fi
