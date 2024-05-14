@@ -1,0 +1,4 @@
+#usr/bin/env bash
+# Runs the whoami command with another user given as an arg
+
+su "$1" -c "whoami" -s /bin/bash
