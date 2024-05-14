@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-# Script to configure nginx to run as the nginx user and use port 8080
-# (because the low numbered ports can't be used by non-root)
-
+# Script to configure nginx to run as the nginx user
 sed -iE "s/^user www-data/user nginx/" /etc/nginx/nginx.conf
 sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 chmod 644 /etc/nginx/nginx.conf
