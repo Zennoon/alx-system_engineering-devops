@@ -5,7 +5,7 @@ Contains:
     Misc
     ====
     Script to fetch data from the jsonplaceholder.typicode api
-    about users' TODOs and store relevant information in csv
+    about users' TODOs and store relevant information in JSON
     format to a file
 
 """
