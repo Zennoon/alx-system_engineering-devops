@@ -8,26 +8,24 @@ Contains:
     about users' TODOs and print relevant information
 
 """
-import json
 import sys
-from urllib import request
+import requests
 
 
-API_URL = "https://jsonplaceholder.typicode.com/users/{}"
+ARGV = sys.argv
+API_URL = "https://jsonplaceholder.typicode.com/users/{}".format(ARGV[1])
 
 if __name__ == "__main__":
-    with request.urlopen(API_URL.format(sys.argv[1])) as res:
-        res_body = res.read()
-        employee_name = json.loads(res_body.decode("utf-8")).get("name")
+    employee_res = requests.get(API_URL).json()
+    employee_name = employee_res.get("name")
 
-    with request.urlopen((API_URL + "/todos").format(sys.argv[1])) as res:
-        res_body = res.read()
-        all_tasks = json.loads(res_body.decode("utf-8"))
-        completed_tasks = list(filter(lambda task: task.get("completed"),
-                                      all_tasks))
+    tasks_res = requests.get(API_URL + "/todos").json()
+
+    completed_tasks = list(filter(lambda task: task.get("completed"),
+                                  tasks_res))
 
     output = "Employee {} is done with tasks({}/{}):"
     print(output.format(employee_name, len(completed_tasks),
-                        len(all_tasks)))
+                        len(tasks_res)))
     for task in completed_tasks:
         print("\t {}".format(task.get("title")))
