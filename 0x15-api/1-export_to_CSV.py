@@ -25,5 +25,5 @@ if __name__ == "__main__":
     with open("{}.csv".format(ARGV[1]), 'w', encoding="utf-8") as f:
         for task in tasks_res:
             f.write('"{}","{}","{}","{}"\n'.format(user_id, employee_username,
-                                                 task.get("completed"),
-                                                 task.get("title")))
+                                                   task.get("completed"),
+                                                   task.get("title")))
