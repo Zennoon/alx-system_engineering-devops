@@ -24,7 +24,7 @@ if __name__ == "__main__":
     tasks_res = requests.get(API_URL + "/todos").json()
 
     with open("{}.json".format(ARGV[1]), 'w', encoding="utf-8") as f:
-        output = {"2": [{
+        output = {user_id: [{
             "task": task.get("title"),
             "completed": task.get("completed"),
             "username": employee_username,
