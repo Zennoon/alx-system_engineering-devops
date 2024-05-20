@@ -12,10 +12,9 @@ import sys
 import requests
 
 
-ARGV = sys.argv
-API_URL = "https://jsonplaceholder.typicode.com/users/{}".format(ARGV[1])
-
 if __name__ == "__main__":
+    ARGV = sys.argv
+    API_URL = "https://jsonplaceholder.typicode.com/users/{}".format(ARGV[1])
     employee_res = requests.get(API_URL).json()
     employee_name = employee_res.get("name")
 
