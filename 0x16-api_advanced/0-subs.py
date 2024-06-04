@@ -22,6 +22,8 @@ def number_of_subscribers(subreddit):
         int: The number of subscribers of the given subreddit (0 if the
         subreddit doesn't exist)
     """
+    if subreddit is None or not isinstance(subreddit, str):
+        return 0
     num_subscribers = 0
     endpoint_url = "https://www.reddit.com/r/{}/about.json"
     res = requests.get(endpoint_url.format(subreddit),
