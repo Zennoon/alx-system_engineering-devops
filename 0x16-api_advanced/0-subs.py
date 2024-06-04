@@ -34,6 +34,8 @@ def number_of_subscribers(subreddit):
         data = res.json()
     except Exception:
         return (0)
-    if data.get("data") is not None:
-        num_subscribers = data["data"]["subscribers"]
+    else:
+        if data.get("data") is not None:
+            if data["data"].get("subscribers") is not None:
+                num_subscribers = data["data"]["subscribers"]
     return (num_subscribers)

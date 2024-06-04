@@ -25,9 +25,13 @@ def top_ten(subreddit):
                        headers={
                            "User-Agent": "top-ten-subreddit-posts"
                        })
-    data = res.json()
-    if data.get("data") is not None:
-        for post in data["data"]["children"]:
-            print(post["data"]["title"])
-    else:
+    try:
+        data = res.json()
+    except Exception:
         print(None)
+    else:
+        if data.get("data") is not None:
+            for post in data["data"]["children"]:
+                print(post["data"]["title"])
+        else:
+            print(None)
