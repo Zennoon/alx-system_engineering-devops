@@ -28,7 +28,7 @@ def number_of_subscribers(subreddit):
     endpoint_url = "https://www.reddit.com/r/{}/about.json"
     res = get(endpoint_url.format(subreddit),
               headers={
-                  "User-Agent": "Google Chrome Version 81.0.4044.129"
+                  "User-agent": "Google Chrome Version 81.0.4044.129"
               })
     data = res.json()
     if data.get("data") is not None:
