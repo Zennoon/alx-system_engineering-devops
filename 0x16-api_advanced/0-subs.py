@@ -1,36 +1,31 @@
 #!/usr/bin/python3
-"""
-Contains:
-    Functions
-    =========
-    number_of_subscribers(subreddit) - Communicates with the Reddit API to get
-    the number of subscribers for a given subreddit
-"""
-from requests import get
+""" How many subs? """
 
 
 def number_of_subscribers(subreddit):
-    """
-    Communicates with the Reddit API to get the number of subscribers
-    for a given subreddit.
+    """ Returns subscriber count of subreddit or 0 """
+    from requests import get
 
-    Args:
-        subreddit (str): The name of the subreddit whose subscribers count
-        is extracted
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
-    Returns:
-        int: The number of subscribers of the given subreddit (0 if the
-        subreddit doesn't exist)
-    """
-    if subreddit is None or not isinstance(subreddit, str):
+    headers = {'user-agent': 'my-app/0.0.1'}
+
+    r = get(url, headers=headers, allow_redirects=False)
+
+    if r.status_code != 200:
         return 0
-    num_subscribers = 0
-    endpoint_url = "https://www.reddit.com/r/{}/about.json"
-    res = get(endpoint_url.format(subreddit),
-              headers={
-                  "User-agent": "Google Chrome Version 81.0.4044.129"
-              })
-    data = res.json()
-    if data.get("data") is not None:
-        num_subscribers = data["data"]["subscribers"]
-    return (num_subscribers)
+
+    try:
+        js = r.json()
+
+    except ValueError:
+        return 0
+
+    data = js.get("data")
+
+    if data:
+        sub_count = data.get("subscribers")
+        if sub_count:
+            return sub_count
+
+    return 0
