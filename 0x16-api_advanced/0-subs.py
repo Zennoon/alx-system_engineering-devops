@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """
-
 Contains:
     Functions
     =========
@@ -34,7 +33,3 @@ def number_of_subscribers(subreddit):
     if data.get("data") is not None:
         num_subscribers = data["data"]["subscribers"]
     return (num_subscribers)
-
-
-print(number_of_subscribers("programming"))
-print(number_of_subscribers("this_shouldn't_exist_zennoon"))
