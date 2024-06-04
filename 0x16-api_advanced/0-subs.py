@@ -6,7 +6,7 @@ Contains:
     number_of_subscribers(subreddit) - Communicates with the Reddit API to get
     the number of subscribers for a given subreddit
 """
-import requests
+from requests import get
 
 
 def number_of_subscribers(subreddit):
@@ -26,10 +26,10 @@ def number_of_subscribers(subreddit):
         return 0
     num_subscribers = 0
     endpoint_url = "https://www.reddit.com/r/{}/about.json"
-    res = requests.get(endpoint_url.format(subreddit),
-                       headers={
-        "User-Agent": "number-of-subscribers"
-    })
+    res = get(endpoint_url.format(subreddit),
+              headers={
+                  "User-Agent": "number-of-subscribers"
+              })
     data = res.json()
     if data.get("data") is not None:
         num_subscribers = data["data"]["subscribers"]
