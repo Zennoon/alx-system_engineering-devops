@@ -27,7 +27,6 @@ def number_of_subscribers(subreddit):
     num_subscribers = 0
     endpoint_url = "https://www.reddit.com/r/{}/about.json"
     res = requests.get(endpoint_url.format(subreddit),
-                       allow_redirects=False,
                        headers={
         "User-Agent": "number-of-subscribers"
     })
